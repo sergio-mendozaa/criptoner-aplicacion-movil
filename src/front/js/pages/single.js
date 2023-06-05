@@ -3,26 +3,44 @@ import PropTypes from "prop-types";
 import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 import rigoImageUrl from "../../img/rigo-baby.jpg";
+import imagen3 from "/workspace/Criptoner1/src/front/img/Tarjetas.jpg";
+import { useNavigate } from "react-router-dom";
+export const Single = (props) => {
+  const { store, actions } = useContext(Context);
+  const params = useParams();
+  const navigate = useNavigate();
+  const handleTransacciones = () => {
+    navigate("/transacciones"); // Redirige a "/otraVista"
+  };
 
-export const Single = props => {
-	const { store, actions } = useContext(Context);
-	const params = useParams();
-
-	return (
-		<div className="jumbotron">
-			<h1 className="display-4">This will show the demo element: {store.demo[params.theid].title}</h1>
-			<img src={rigoImageUrl} />
-			<hr className="my-4" />
-
-			<Link to="/">
-				<span className="btn btn-primary btn-lg" href="#" role="button">
-					Back home
-				</span>
-			</Link>
-		</div>
-	);
+  return (
+    <div className="panel" style={{ marginBottom: "5cm" }}>
+      <img
+        src={imagen3}
+        style={{ height: "1000px", width: "1900px", position: "relative" }}
+      ></img>
+      <button
+        className="transparentButton"
+        onClick={handleTransacciones}
+        style={{
+          position: "absolute",
+          top: "34%",
+          left: "10%",
+          transform: "translate(-50%, -50%)",
+          background: "transparent",
+          color: "transparent",
+          border: "transparent",
+          paddingLeft: "4cm",
+          paddingRight: "4cm",
+        }}
+      >
+        Click me
+      </button>
+      <br />
+    </div>
+  );
 };
 
 Single.propTypes = {
-	match: PropTypes.object
+  match: PropTypes.object,
 };

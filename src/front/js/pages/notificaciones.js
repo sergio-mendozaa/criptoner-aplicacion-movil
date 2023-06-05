@@ -1,33 +1,35 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
-import imagen2 from "/workspace/Criptoner1/src/front/img/Panel.jpg";
+import imagen5 from "/workspace/Criptoner1/src/front/img/Notificaciones.jpg";
 import { Context } from "../store/appContext";
 import { useNavigate } from "react-router-dom";
 
-export const Demo = () => {
+export const Notificaciones = () => {
   const { store, actions } = useContext(Context);
   const navigate = useNavigate();
-  const handleTarjetas = () => {
-    navigate("/single/:theid"); // Redirige a "/otraVista"
+  const handlePerfil = () => {
+    navigate("/perfil"); // Redirige a "/otraVista"
   };
 
   return (
     <div className="panel" style={{ marginBottom: "5cm" }}>
       <img
-        src={imagen2}
+        src={imagen5}
         style={{ height: "1000px", width: "1900px", position: "relative" }}
       ></img>
       <button
         className="transparentButton"
-        onClick={handleTarjetas}
+        onClick={handlePerfil}
         style={{
           position: "absolute",
-          top: "29%",
-          left: "8%",
+          top: "45%",
+          left: "7%",
           transform: "translate(-50%, -50%)",
           background: "transparent",
           color: "transparent",
           border: "transparent",
+          paddingLeft: "4cm",
+          paddingRight: "4cm",
         }}
       >
         Click me
