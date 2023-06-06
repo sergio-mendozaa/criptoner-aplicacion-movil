@@ -3,7 +3,6 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 import { BackendURL } from "./component/backendURL";
 
-import { Home } from "./pages/home.js";
 import { Demo } from "./pages/demo.js";
 import { Single } from "./pages/single.js";
 import { Transacciones } from "./pages/transacciones.js";
@@ -25,7 +24,6 @@ const Layout = () => {
       <BrowserRouter basename={basename}>
         <ScrollToTop>
           <Routes>
-            <Route element={<Home />} path="/" />
             <Route element={<Demo />} path="/demo" />
             <Route element={<Single />} path="/single/:theid" />
             <Route element={<Transacciones />} path="/transacciones" />
